@@ -74,7 +74,7 @@ To have it up and running please execute the following steps:
 First, clone the repository and change current directory to it:
 
 ```sh
-git clone https://github.com/CatchTheTornado/text-extract-api.git
+git clone https://github.com/your-username/text-extract-api.git
 cd text-extract-api
 ```
 
@@ -134,25 +134,22 @@ To have multiple tasks running at once - for concurrent processing please run th
 celery -A text_extract_api.tasks worker --loglevel=info --pool=solo & # to scale by concurrent processing please run this line as many times as many concurrent processess you want to have running
 ```
 
-## Online demo
+## demo
 
-To try out the application with our hosted version you can skip the Getting started and try out the CLI tool against our cloud:
 
-Open in the browser: <a href="https://demo.doctractor.com/">demo.doctractor.com</a>
-
-... or run n the terminal:
+... or run in the terminal:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -e .
-export OCR_UPLOAD_URL=https://doctractor:Aekie2ao@api.doctractor.com/ocr/upload
-export RESULT_URL=https://doctractor:Aekie2ao@api.doctractor.com/ocr/result/
+export OCR_UPLOAD_URL=https://username:password@api.example.com/ocr/upload
+export RESULT_URL=https://username:password@api.example.com/ocr/result/
 
 python client/cli.py ocr_upload --file examples/example-mri.pdf --ocr_cache --prompt_file=examples/example-mri-remove-pii.txt
 ```
 
-[Demo Source code](https://github.com/CatchTheTornado/text-extract-api-demo)
+[Demo Source code](https://github.com/your-username/text-extract-api-demo)
 
 **Note:** In the free demo we don't guarantee any processing times. The API is Open so please do **not send any secret documents neither any documents containing personal information**, If you do - you're doing it on your own risk and responsiblity.
 
@@ -160,7 +157,7 @@ python client/cli.py ocr_upload --file examples/example-mri.pdf --ocr_cache --pr
 
 ## Join us on Discord
 
-In case of any questions, help requests or just feedback - please [join us on Discord](https://discord.gg/NJzu47Ye3a)!
+In case of any questions, help requests or just feedback - please join us on Discord!
 
 
 ## Text extract strategies
@@ -249,7 +246,7 @@ We are connecting to remote OCR via it's API to not share the same license (GPL3
 ### Clone the Repository
 
 ```sh
-git clone https://github.com/CatchTheTornado/text-extract-api.git
+git clone https://github.com/your-username/text-extract-api.git
 cd text-extract-api
 ```
 
@@ -324,7 +321,7 @@ This will start the following services:
 
 ## Cloud - paid edition
 
-If the on-prem is too much hassle [ask us about the hosted/cloud edition](mailto:info@catchthetornado.com?subject=text-extract-api%20but%20hosted) of text-extract-api, we can setup it you, billed just for the usage.
+If the on-prem is too much hassle, ask us about the hosted/cloud edition of text-extract-api, we can setup it for you, billed just for the usage.
 
 ## CLI tool
 
@@ -457,7 +454,7 @@ You might want to use the dedicated API clients to use `text-extract-api`.
 
 ### Typescript
 
-There's a dedicated API client for Typescript - [text-extract-api-client](https://github.com/CatchTheTornado/text-extract-api-client) and the `npm` package by the same name:
+There's a dedicated API client for Typescript - [text-extract-api-client](https://github.com/your-username/text-extract-api-client) and the `npm` package by the same name:
 
 ```bash
 npm install text-extract-api-client
@@ -467,7 +464,7 @@ Usage:
 
 ```js
 import { ApiClient, OcrRequest } from 'text-extract-api-client';
-const apiClient = new ApiClient('https://api.doctractor.com/', 'doctractor', 'Aekie2ao');
+const apiClient = new ApiClient('https://api.example.com/', 'username', 'password');
 const formData = new FormData();
 formData.append('file', fileInput.files[0]);
 formData.append('prompt', 'Convert file to JSON and return only JSON'); // if not provided, no LLM transformation will gonna happen - just the OCR
@@ -620,7 +617,7 @@ strategy: google_drive
 settings:
 ## how to enable GDrive API: https://developers.google.com/drive/api/quickstart/python?hl=pl
 
-  service_account_file: /storage/client_secret_269403342997-290pbjjlb06nbof78sjaj7qrqeakp3t0.apps.googleusercontent.com.json
+  service_account_file: /storage/client_secret_XXXXX-XXXXX.apps.googleusercontent.com.json
   folder_id:
 ```
 
@@ -680,4 +677,4 @@ AWS_S3_BUCKET_NAME=your-bucket-name
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
-In case of any questions please contact us at: info@catchthetornado.com
+In case of any questions please contact us.
